@@ -1,5 +1,10 @@
 import { Router } from 'express';
-import { getPosts, getPost, addPost } from '../controllers/postController';
+import {
+  getPosts,
+  getPost,
+  addPost,
+  updatePost,
+} from '../controllers/postController';
 
 const router = Router();
 
@@ -12,4 +17,6 @@ router.get('/post/:id', getPost);
 // POST /post
 router.post('/post', addPost);
 
+// PUT /post/:id
+router.put('/post/:id', updatePost);
 export default router;
