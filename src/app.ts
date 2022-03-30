@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 // 3rd party modules imports
 import express from 'express';
 import bodyParser from 'body-parser';
