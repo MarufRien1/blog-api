@@ -78,3 +78,19 @@ export const updatePost = (req: Request, res: Response) => {
   // success response
   res.status(200).json({ message: 'Post updated', post: updatePost });
 };
+
+export const deletePost = (req: Request, res: Response) => {
+  const requestedPost = posts.find((post) => post._id === req.params.id);
+
+  if (!requestedPost) {
+    return res.status(404).json({ message: 'Post not found' });
+  }
+
+  const requestedPostIndex = posts.findIndex(
+    (post) => post._id === req.params.id
+  );
+  posts.splice(requestedPostIndex, 1);
+
+  // success response
+  res.status(200).json({ message: 'Post deleted' });
+};

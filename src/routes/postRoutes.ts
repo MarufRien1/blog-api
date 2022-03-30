@@ -4,6 +4,7 @@ import {
   getPost,
   addPost,
   updatePost,
+  deletePost,
 } from '../controllers/postController';
 
 const router = Router();
@@ -19,4 +20,8 @@ router.post('/post', addPost);
 
 // PUT /post/:id
 router.put('/post/:id', updatePost);
+
+// DELETE /post/:id
+router.delete('/post/:id', deletePost);
+
 export default router;
