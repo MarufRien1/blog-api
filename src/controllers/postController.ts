@@ -21,3 +21,25 @@ export const getPost = (req: Request, res: Response) => {
     res.status(404).json({ message: 'Post not found' });
   }
 };
+
+// add a new post
+export const addPost = (req: Request, res: Response) => {
+  //creating a random id
+  const _id = Math.random().toString();
+
+  // extracting values form request
+  const title = req.body.title;
+  const content = req.body.content;
+  const imageUrl = req.body.imageUrl;
+  const creator = req.body.creator;
+
+  // validation
+  if (!title || !content || !imageUrl || !creator) {
+    return res.status(400).json({ message: 'Please provide all fields' });
+  } else {
+    // for valid post
+    const newPost = { _id, title, content, imageUrl, creator };
+    posts.push(newPost);
+    res.status(201).json({ message: 'Post created', post: newPost });
+  }
+};
