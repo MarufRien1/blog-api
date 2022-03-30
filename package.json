@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/MarufRien1/blog-api#readme",
   "dependencies": {
+    "body-parser": "^1.19.2",
     "express": "^4.17.3",
     "ts-node": "^10.7.0"
   },
